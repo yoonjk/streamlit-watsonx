@@ -2,6 +2,8 @@ import streamlit as st
 from ibm_watson_machine_learning.foundation_models import Model
 from ibm_watson_machine_learning.metanames import GenTextParamsMetaNames as GenParams
 
+st.title("watsonx.ai를 이용한 챗봇!")
+
 # Create LLM
 def create_llm(api_key, api_url, project_id):
     """_summary_
@@ -25,7 +27,7 @@ def create_llm(api_key, api_url, project_id):
 
     # Instantiate a model proxy object to send your requests
     model = Model(
-        model_id="meta-llama/llama-3-70b-instruct",
+        model_id="meta-llama/llama-2-70b-chat",
         params=params,
         credentials=credentials,
         project_id=project_id)
